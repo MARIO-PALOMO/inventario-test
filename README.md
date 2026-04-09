@@ -57,11 +57,23 @@ NOTA: En la ruta que se ejecuta nuestro API se prodrá realizar las pruebas de l
 <img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Lista%20Transacciones.png?raw=true" />
     - Transacciones por Producto y Tipo
 <img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Lista%20Trasacciona%20Agrupado%20por%20producto%20y%20tipo.png?raw=true" />
+
 - Pantalla para la creación de productos.
 <img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Agregar%20Productos.png?raw=true" />
 <img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Agregar%20Productos%20Validacion.png?raw=true" />
 
 - Pantalla para la edición de productos.
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Modificar%20Productos.png?raw=true" />
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Modificar%20Productos%20Validacion.png?raw=true" />
+
 - Pantalla para la creación de transacciones.
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Agregar%20Transaccion.png?raw=true" />
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Agregar%20Transaccion%20Validacion.png?raw=true" />
+
 - Pantalla para la edición de transacciones.
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Modificar%20Transaccion.png?raw=true" />
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Modificar%20Transaccion%20Validacion.png?raw=true" />
+
 - Pantalla de filtros dinámicos.
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Filtros%20y%20Paginacion%20Productos.png?raw=true" />
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Filtros%20y%20Paginacion%20Transacciones.png?raw=true" />
