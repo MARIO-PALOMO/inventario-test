@@ -1,0 +1,209 @@
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
+<p-toast />
+<app-sidebar></app-sidebar>
+<div class="content">
+  <h2>Transacciones</h2>
+  <p>
+    <p-button severity="info" (click)=" addTransaction()">
+      <i class="pi pi-save"></i> Agregar
+    </p-button>
+  </p>
+
+  <p-tabs value="0">
+    <p-tablist>
+      <p-tab value="0">Historial</p-tab>
+      <p-tab value="1">Historial Productos</p-tab>
+    </p-tablist>
+    <p-tabpanels>
+      <p-tabpanel value="0">
+        <p-table #dt2 [value]="transactionsDTO.transactions" [lazy]="true" (onLazyLoad)="getTransactions($event)"
+          [paginator]="true" [rows]="5" [totalRecords]="transactionsDTO.total" [loading]="transactionsDTO.loading"
+          showGridlines stripedRows>
+          <ng-template pTemplate="header">
+            <tr>
+              <th colspan="6">
+                <div class="text-right">
+                  <b>Filtro Fechas:</b>
+                </div>
+              </th>
+              <th>
+                <div class="text-right" style="display:  inline-block !important;">
+                  <p-columnFilter field="start" matchMode="equals" [showMenu]="false">
+                    <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                      <p-datepicker [ngModel]="value" (onSelect)="filter($event)" appendTo="body"
+                        placeholder="Fecha Inicio" />
+                    </ng-template>
+                  </p-columnFilter>
+
+                </div>
+              </th>
+              <th>
+                <div class="text-right" style="display:  inline-block !important;">
+                  <p-columnFilter field="end" matchMode="equals" [showMenu]="false">
+                    <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                      <p-datepicker [ngModel]="value" (onSelect)="filter($event)" appendTo="body"
+                        placeholder="Fecha Fin" />
+                    </ng-template>
+                  </p-columnFilter>
+
+                </div>
+              </th>
+              <th colspan="2"></th>
+            </tr>
+            <tr>
+              <th colspan="2"></th>
+              <th>
+                <p-columnFilter field="transactionTypeId" matchMode="equals" [showMenu]="false">
+                  <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                    <p-select [ngModel]="value" [options]="transactionTypes" (onChange)="filter($event.value)"
+                      placeholder="Buscar por tipo" [showClear]="true" optionLabel="name" optionValue="id"
+                      class="w-full" appendTo="body">
+
+                    </p-select>
+                  </ng-template>
+                </p-columnFilter>
+              </th>
+              <th>
+                <p-columnFilter type="text" field="product?.name" placeholder="Buscar por producto" display="row"
+                  [showMenu]="false" class="w-full"></p-columnFilter>
+              </th>
+              <th colspan="6"></th>
+            </tr>
+
+            <tr>
+              <th style="width:22%">Código</th>
+              <th style="width: 120px; min-width: 120px;">Fecha</th>
+              <th>Tipo Transacción</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th style="width: 200px; min-width: 200px;">Precio Total</th>
+              <th style="width: 200px; min-width: 200px;">Detalle</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-transaction>
+            <tr>
+              <td>{{ transaction.code }}</td>
+              <td>{{ transaction.date | date:'yyyy-MM-dd' }}</td>
+              <td>{{ transaction.transactionType?.name }}</td>
+              <td>{{ transaction.product?.name }}</td>
+              <td>{{ transaction.amount }}</td>
+              <td>{{ transaction.unitPrice | currency: 'USD' }}</td>
+              <td>{{ transaction.totalPrice | currency: 'USD' }}</td>
+              <td>{{ transaction.detail }}</td>
+              <td>
+                <p-button severity="warn" (click)="updateTransaction(transaction)">
+                  <i class="pi pi-pen-to-square"></i>
+                </p-button>
+              </td>
+              <td>
+                <p-button severity="danger" (click)="deleteTransaction(transaction.transactionId)">
+                  <i class="pi pi-trash"></i>
+                </p-button>
+              </td>
+            </tr>
+
+
+
+          </ng-template>
+          <ng-template #footer>
+            @if(transactionsDTO.transactions.length == 0){
+            <tr>
+              <td colspan="10" class="text-center">Sin Resultados</td>
+            </tr>
+            }
+          </ng-template>
+        </p-table>
+      </p-tabpanel>
+      <p-tabpanel value="1">
+        <p-table #dt1 [value]="transactionsByProductDTO.transactionsProducts" [lazy]="true" (onLazyLoad)="getTransactionsByProducts($event)"
+          [paginator]="true" [rows]="5" [totalRecords]="transactionsByProductDTO.total" [loading]="transactionsByProductDTO.loading"
+          showGridlines stripedRows>
+          <ng-template pTemplate="header">
+            <tr>
+              <th colspan="6">
+                <div class="text-right">
+                  <b>Filtro Fechas:</b>
+                </div>
+              </th>
+              <th>
+                <div class="text-right" style="display:  inline-block !important;">
+                  <p-columnFilter field="start" matchMode="equals" [showMenu]="false">
+                    <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                      <p-datepicker [ngModel]="value" (onSelect)="filter($event)" appendTo="body"
+                        placeholder="Fecha Inicio" />
+                    </ng-template>
+                  </p-columnFilter>
+
+                </div>
+              </th>
+              <th>
+                <div class="text-right" style="display:  inline-block !important;">
+                  <p-columnFilter field="end" matchMode="equals" [showMenu]="false">
+                    <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                      <p-datepicker [ngModel]="value" (onSelect)="filter($event)" appendTo="body"
+                        placeholder="Fecha Fin" />
+                    </ng-template>
+                  </p-columnFilter>
+
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th colspan="2"></th>
+              <th>
+                <p-columnFilter field="transactionType" matchMode="equals" [showMenu]="false">
+                  <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                    <p-select [ngModel]="value" [options]="transactionTypes" (onChange)="filter($event.value)"
+                      placeholder="Buscar por tipo" [showClear]="true" optionLabel="name" optionValue="id"
+                      class="w-full" appendTo="body">
+
+                    </p-select>
+                  </ng-template>
+                </p-columnFilter>
+              </th>
+              <th colspan="5"></th>
+            </tr>
+
+            <tr>
+              <th>Producto</th>
+              <th>Stock Actual</th>
+              <th>Tipo Transacción</th>
+              <th>Tipo Transacciones Totales</th>
+              <th>Cantidad Total de Compras</th>
+              <th>Cantidad Total de Ventas</th>
+              <th>Precio Total de Compras</th>
+              <th>Precio Total de Ventas</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-transactionProduct>
+            <tr>
+              <td>{{ transactionProduct.name }}</td>
+              <td>{{ transactionProduct.currentStock }}</td>
+              <td>{{ transactionProduct.transactionType }}</td>
+              <td>{{ transactionProduct.totalTransactionType }}</td>
+              <td>{{ transactionProduct.totalPurchasesAmount | currency: 'USD' }}</td>
+              <td>{{ transactionProduct.totalSalesAmount | currency: 'USD' }}</td>
+              <td>{{ transactionProduct.totalPurchasesPrice | currency: 'USD' }}</td>
+              <td>{{ transactionProduct.totalSalesPrice | currency: 'USD' }}</td>
+            </tr>
+
+
+
+          </ng-template>
+          <ng-template #footer>
+            @if(transactionsByProductDTO.transactionsProducts.length == 0){
+            <tr>
+              <td colspan="8" class="text-center">Sin Resultados</td>
+            </tr>
+            }
+          </ng-template>
+        </p-table>
+      </p-tabpanel>
+    </p-tabpanels>
+  </p-tabs>
+
+
+</div>

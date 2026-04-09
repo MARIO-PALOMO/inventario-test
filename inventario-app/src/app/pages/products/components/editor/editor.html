@@ -1,0 +1,99 @@
+<form [formGroup]="productForm" (submit)="management()">
+    <div class="field">
+        <label>Nombre <small class="text-red-500">*</small></label>
+        <input type="text" pInputText class="w-full" formControlName="name">
+
+        @if(productForm.get('name')?.invalid && productForm.get('name')?.dirty && productForm.get('name')?.touched){
+        @if(productForm.get('name')?.errors?.['required']){
+        <small class="text-red-500">
+            Ingresar un nombre
+        </small>
+        }
+        }
+
+    </div>
+    <div class="field">
+        <label>Descripción</label>
+        <input type="text" pInputText class="w-full" formControlName="description">
+
+    </div>
+    <div class="field">
+        <label>Categoría <small class="text-red-500">*</small></label>
+        <p-select formControlName="categoryId" [options]="categories" placeholder="Categorias" [showClear]="true"
+            appendTo="body" optionLabel="name" optionValue="id" class="w-full"></p-select>
+
+        @if(productForm.get('categoryId')?.invalid && productForm.get('categoryId')?.dirty &&
+        productForm.get('categoryId')?.touched){
+        @if(productForm.get('categoryId')?.errors?.['required']){
+        <small class="text-red-500">
+            Seleccionar una categoria
+        </small>
+        }
+        }
+    </div>
+    <div class="field">
+        <label>Imagen <small class="text-red-500">*</small></label>
+        <input type="file" name="imageFile" id="imageFile" (change)="getImage($event)" accept="image/*" pInputText
+            class="w-full" />
+        @if(type == 2){
+        <small>{{ productForm.get('name')?.value }}.png</small>
+        }
+
+        @if(productForm.get('image')?.invalid && productForm.get('image')?.dirty &&
+        productForm.get('image')?.touched){
+        @if(productForm.get('image')?.errors?.['required']){
+        <small class="text-red-500">
+            Seleccionar una imagen
+        </small>
+        }
+        }
+    </div>
+    <div class="field">
+        <label>Precio <small class="text-red-500">*</small></label>
+        <p-inputnumber formControlName="price" inputId="currency-us" mode="currency" currency="USD" locale="en-US"
+            class="w-full" />
+
+        @if(productForm.get('price')?.invalid && productForm.get('price')?.dirty &&
+        productForm.get('price')?.touched){
+        @if(productForm.get('price')?.errors?.['required']){
+        <small class="text-red-500">
+            Ingresar un precio
+        </small>
+        }
+        @if(productForm.get('price')?.errors?.['min']){
+        <small class="text-red-500">
+            El precio debe ser mayor o igual a 1
+        </small>
+        }
+        }
+    </div>
+    <div class="field">
+        <label>Stock <small class="text-red-500">*</small></label>
+        <p-inputnumber formControlName="stock" inputId="minmax" class="w-full" [min]="0" [max]="10000000" />
+        @if(productForm.get('stock')?.invalid && productForm.get('stock')?.dirty &&
+        productForm.get('stock')?.touched){
+        @if(productForm.get('stock')?.errors?.['required']){
+        <small class="text-red-500">
+            Ingresar el stock
+        </small>
+        }
+        @if(productForm.get('stock')?.errors?.['min']){
+        <small class="text-red-500">
+            El stock debe ser mayor o igual a 1
+        </small>
+        }
+        }
+    </div>
+    <div class="field text-right">
+        @if(type == 1){
+        <p-button severity="info" [disabled]="productForm.invalid" type="submit">
+            <i class="pi pi-save"></i> Guardar
+        </p-button>
+        }@else if(type == 2){
+        <p-button severity="warn" [disabled]="productForm.invalid" type="submit">
+            <i class="pi pi-pen-to-square"></i> Guardar
+        </p-button>
+        }
+
+    </div>
+</form>
