@@ -49,7 +49,9 @@ NOTA: En la ruta que se ejecuta nuestro API se prodrá realizar las pruebas de l
 - Se ejecutara el frontend en la siguiente url **http://localhost:4200**
 
 ## Evidencias
+
 - Listado dinámico de productos y transacciones con paginación.
+  <img width="1703" height="869" alt="Lista Productos" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Lista%20Productos.png?raw=true" />
 - Pantalla para la creación de productos.
 - Pantalla para la edición de productos.
 - Pantalla para la creación de transacciones.
