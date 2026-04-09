@@ -51,8 +51,16 @@ NOTA: En la ruta que se ejecuta nuestro API se prodrá realizar las pruebas de l
 ## Evidencias
 
 - Listado dinámico de productos y transacciones con paginación.
-  <img width="1703" height="869" alt="Lista Productos" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Lista%20Productos.png?raw=true" />
+    - Productos
+  <img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Lista%20Productos.png?raw=true" />
+    - Transacciones
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Lista%20Transacciones.png?raw=true" />
+    - Transacciones por Producto y Tipo
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Lista%20Trasacciona%20Agrupado%20por%20producto%20y%20tipo.png?raw=true" />
 - Pantalla para la creación de productos.
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Agregar%20Productos.png?raw=true" />
+<img width="1703" height="869" alt="Imagen" src="https://github.com/MARIO-PALOMO/inventario-test/blob/main/resources/images/Agregar%20Productos%20Validacion.png?raw=true" />
+
 - Pantalla para la edición de productos.
 - Pantalla para la creación de transacciones.
 - Pantalla para la edición de transacciones.
