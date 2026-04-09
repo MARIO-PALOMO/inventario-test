@@ -1,7 +1,7 @@
 export const environment = {
     production: false,
     api: {
-        url: 'https://localhost:44370/api/v1',
+        url: 'http://localhost:5296/api/v1',
         paths: {
             products: {
                 categories: 'Product/Category/GetAll',

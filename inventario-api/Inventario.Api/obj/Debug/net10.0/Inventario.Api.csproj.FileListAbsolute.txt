@@ -321,10 +321,10 @@ C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\Inventar.71DA4C0A.Up2Date
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\Inventario.Api.dll
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\refint\Inventario.Api.dll
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\Inventario.Api.pdb
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\Inventario.Api.genruntimeconfig.cache
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\ref\Inventario.Api.dll
+C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Api\obj\Debug\net10.0\Inventario.Api.sourcelink.json

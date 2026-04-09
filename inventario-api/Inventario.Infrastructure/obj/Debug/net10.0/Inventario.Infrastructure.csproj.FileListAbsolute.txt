@@ -32,3 +32,4 @@ C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Infrastr
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Infrastructure\obj\Debug\net10.0\Inventario.Infrastructure.pdb
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Infrastructure\obj\Debug\net10.0\Inventario.Infrastructure.genruntimeconfig.cache
 C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Infrastructure\obj\Debug\net10.0\ref\Inventario.Infrastructure.dll
+C:\Users\mario\Documents\Proyectos\Inventario\inventario-api\Inventario.Infrastructure\obj\Debug\net10.0\Inventario.Infrastructure.sourcelink.json

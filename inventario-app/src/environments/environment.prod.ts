@@ -1,11 +1,13 @@
 export const environment = {
     production: true,
     api: {
-        url: 'https://localhost:44370/api/v1',
+        url: 'http://localhost:5296/api/v1',
         paths: {
             products: {
                 categories: 'Product/Category/GetAll',
                 list: 'Product/Get?',
+                listAll: 'Product/GetAll',
+                listById: 'Product/GetById?id=',
                 add: 'Product/Add',
                 update: 'Product/Update',
                 delete: 'Product/Delete?id=',
@@ -15,6 +17,8 @@ export const environment = {
                 list: 'Transaction/Get?',
                 listGroupByProduct: 'Transaction/GetGroupByProduct?',
                 add: 'Transaction/Add',
+                update: 'Transaction/Update',
+                delete: 'Transaction/Delete?id='
             }
         }
     }
